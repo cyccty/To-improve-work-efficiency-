@@ -20,7 +20,8 @@ class call_WeChat():
                     pass
                 else:
                     print("未检测到程序运行状态，呼叫微信")
-                    itchat.send('Master, it is done now :)', toUserName='filehelper')
+                    UserName = str(itchat.search_friends(name='DJ')[0]['UserName'])
+                    itchat.send('Master, it is done now :)', toUserName=UserName)
                     break
         except KeyboardInterrupt as e:
             print("检测到CTRL+C，准备退出程序!")
